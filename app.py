@@ -4,10 +4,11 @@ This is the "server" — it runs Python, talks to the database,
 and sends HTML back to the browser.
 """
 from flask import Flask, render_template, request, redirect
+from pathlib import Path
 import sqlite3
 
 app = Flask(__name__)
-DB = "guestbook.db"
+DB = Path(__file__).resolve().parent / "guestbook.db"
 
 
 def get_db():
@@ -29,6 +30,9 @@ def setup():
     """)
     conn.commit()
     conn.close()
+
+
+setup()
 
 
 @app.route("/")
@@ -59,5 +63,4 @@ def sign():
 
 
 if __name__ == "__main__":
-    setup()
     app.run(debug=True)
