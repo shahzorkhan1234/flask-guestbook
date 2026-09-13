@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Guestbook</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📖 Sign Our Class Guestbook</h1>
+
+  <!-- This form sends data to the /sign route in app.py -->
+  <form action="/sign" method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="text" name="message" placeholder="Say something!">
+    <button type="submit">Sign</button>
+  </form>
+
+  <h2>Signatures</h2>
+  <ul>
+    <!-- This loop runs once for each row from the database -->
+    {% for s in signatures %}
+      <li><strong>{{ s.name }}</strong>: {{ s.message }}</li>
+    {% else %}
+      <li>No signatures yet. Be the first!</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

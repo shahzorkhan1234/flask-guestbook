@@ -1,0 +1,46 @@
+/* Students already know CSS — this is theirs to change and expand. */
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+  background: #f7f7fb;
+  color: #222;
+}
+
+h1 { color: #4a3fb5; }
+
+form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #4a3fb5;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover { background: #372e8c; }
+
+ul { list-style: none; padding: 0; }
+
+li {
+  background: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
