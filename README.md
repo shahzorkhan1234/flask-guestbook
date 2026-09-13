@@ -30,10 +30,14 @@ Then open the link it prints (usually http://127.0.0.1:5000).
 ## Deploy it live (Render)
 
 1. Push this folder to a GitHub repo.
-2. On render.com, **New → Web Service**, connect the repo.
-3. Build command: `pip install -r requirements.txt`
-4. Start command: `gunicorn app:app`
-5. Deploy. You get a public URL to share.
+2. Open [Render's Git provider instructions](https://render.com/docs/git-provider) and sign in to Render.
+3. When Render asks to connect GitHub, choose **Connect GitHub** and authorize Render to access your GitHub account.
+4. If GitHub asks which repositories Render can access, choose **Only select repositories** and add this guestbook repository, or choose **All repositories** if that is appropriate for your account.
+5. Return to Render and choose **New → Web Service**. Select **Connect a repository** and choose this GitHub repository.
+6. If the repository does not appear, open your Render account settings, reconnect GitHub, and update the repository access permissions.
+7. Build command: `pip install -r requirements.txt`
+8. Start command: `gunicorn app:app`
+9. Deploy. You get a public URL to share.
 
 ## Expand it with GitHub Copilot — try these prompts
 
